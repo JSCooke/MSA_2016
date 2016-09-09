@@ -1,4 +1,47 @@
-p.footerFont {
-  color: white; }
+h1 {
+  color: #0a0a64; }
+
+h2 {
+  color: #0a0a64; }
+
+h3 {
+  color: #0a0a64; }
+
+h4 {
+  color: #0a0a64; }
+
+h5 {
+  color: #0a0a64; }
+
+h6 {
+  color: #0a0a64; }
+
+p {
+  color: #0a0a64; }
+
+body {
+  background-color: 150, 150, 150; }
+
+a {
+  color: #6464c8; }
+
+.jumbotron {
+  background-color: #c8c8c8;
+  padding-bottom: 20px; }
+  .jumbotron h1 {
+    color: #0a0a64; }
+  .jumbotron h2 {
+    color: #0a0a64; }
+  .jumbotron h3 {
+    color: #0a0a64; }
+  .jumbotron h4 {
+    color: #0a0a64; }
+  .jumbotron h5 {
+    color: #0a0a64; }
+  .jumbotron h6 {
+    color: #0a0a64; }
+
+.navbar-bottom {
+  background-color: #c8c8c8; }
 
 /*# sourceMappingURL=output.css.map */

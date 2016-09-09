@@ -1,4 +1,32 @@
-p.footerFont {
-    @extend p;
-    color: white;
+$headerColour: rgb(200, 200 ,200);
+$backgroundColour: (150, 150 ,150);
+$fontColour: rgb(10, 10 ,100);
+$linkColour: rgb(100, 100 ,200);
+
+@for $index from 1 through 6 {
+  h#{$index}{
+    color: $fontColour;
+  }
+}
+
+p {
+    color:$fontColour;
+}
+body {
+    background-color: $backgroundColour;
+}
+a {
+    color: $linkColour;
+}
+.jumbotron {
+    background-color: $headerColour;
+    padding-bottom: 20px;
+    @for $index from 1 through 6 {
+        h#{$index}{
+            color: $fontColour;
+        }
+    }
+}
+.navbar-bottom {
+    background-color: $headerColour;
 }
