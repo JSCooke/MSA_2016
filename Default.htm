@@ -36,6 +36,34 @@
   </head>
 
   <body>
+    <!--Facebook-->
+    <div id="fb-root"></div>
+      <script>
+          (function(d, s, id){
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) {return;}
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/en_US/sdk.js";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+   </script>
+   <!--Twitter-->
+   <script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+ 
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+ 
+  return t;
+}(document, "script", "twitter-wjs"));</script>
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div id = "headerBody" class="jumbotron">
       <div class="container">
@@ -124,6 +152,8 @@
         </div>
       </div>
     </nav>
+    <iframe src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Fslidecol.azurewebsites.net%2F&layout=button&mobile_iframe=true&width=59&height=20&appId" width="59" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+    <a href="https://twitter.com/share" class="twitter-share-button" data-text="I just made a colour scheme with SlideCol! Try it here:" data-url="http://slidecol.azurewebsites.net/#" data-show-count="false">Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
     </div>
 
 
