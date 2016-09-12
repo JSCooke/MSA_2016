@@ -50,3 +50,21 @@ function updateHex(type) {
     localStorage.setItem("g", g.toString());
     localStorage.setItem("b", b.toString());
 }
+function setColours(header, background, font, link) {
+    document.getElementById("headerRed").value = header[0].toString();
+    document.getElementById("headerGreen").value = header[1].toString();
+    document.getElementById("headerBlue").value = header[2].toString();
+    updateHex('header');
+    document.getElementById("backgroundRed").value = background[0].toString();
+    document.getElementById("backgroundGreen").value = background[1].toString();
+    document.getElementById("backgroundBlue").value = background[2].toString();
+    updateHex('background');
+    document.getElementById("fontRed").value = font[0].toString();
+    document.getElementById("fontGreen").value = font[1].toString();
+    document.getElementById("fontBlue").value = font[2].toString();
+    updateHex('font');
+    document.getElementById("linkRed").value = link[0].toString();
+    document.getElementById("linkGreen").value = link[1].toString();
+    document.getElementById("linkBlue").value = link[2].toString();
+    updateHex('link');
+}

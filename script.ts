@@ -51,3 +51,25 @@ function updateHex(type:string){
     localStorage.setItem("g",g.toString())
     localStorage.setItem("b",b.toString())
 }
+
+function setColours(header: Array<number>, background: Array<number>, font: Array<number>, link: Array<number>){
+    (<HTMLInputElement>document.getElementById("headerRed")).value = header[0].toString();
+    (<HTMLInputElement>document.getElementById("headerGreen")).value = header[1].toString();
+    (<HTMLInputElement>document.getElementById("headerBlue")).value = header[2].toString();
+    updateHex('header');
+
+    (<HTMLInputElement>document.getElementById("backgroundRed")).value = background[0].toString();
+    (<HTMLInputElement>document.getElementById("backgroundGreen")).value = background[1].toString();
+    (<HTMLInputElement>document.getElementById("backgroundBlue")).value = background[2].toString();
+    updateHex('background');
+
+    (<HTMLInputElement>document.getElementById("fontRed")).value = font[0].toString();
+    (<HTMLInputElement>document.getElementById("fontGreen")).value = font[1].toString();
+    (<HTMLInputElement>document.getElementById("fontBlue")).value = font[2].toString();
+    updateHex('font');
+
+    (<HTMLInputElement>document.getElementById("linkRed")).value = link[0].toString();
+    (<HTMLInputElement>document.getElementById("linkGreen")).value = link[1].toString();
+    (<HTMLInputElement>document.getElementById("linkBlue")).value = link[2].toString();
+    updateHex('link');
+}
