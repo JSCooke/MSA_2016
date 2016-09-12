@@ -42,10 +42,11 @@
         <p>This is a simple website where you can try out different colour schemes for your own website! Simply adjust the values down the bottom, and watch the website update to match. Alternately, click the buttons below to try a few premade styles.</p>
         <p>When you're happy with the style, copy the hexcodes and use them on your own site!</p>
         <p>
-          <form class="navbar-form navbar-left">
+          <form class="navbar-form navbar-left" style="width:100%;">
             <a class="btn btn-default btn-lg" href="#" role="button">Monochrome &raquo;</a>
             <a class="btn btn-default btn-lg" href="#" role="button">Two-tone &raquo;</a>
             <a class="btn btn-default btn-lg" href="#" role="button">Three-tone &raquo;</a>
+            <input id="URL" type="text" class="form-control" placeholder="Or, enter a URL, and get a scheme from a website!" style="width:50%;">
           </form>
         </p>
       </div>
@@ -69,50 +70,50 @@
           <div class="col-md-3">
             <!--Adjust p to be lighter-->
             <h3>Header Colour</h3>
-            <p id=headerHex>Hex: #000000</p>
+            <p id="headerHex">Hex: #000000</p>
             <p>
               Red
-              <input id=headerRed type="number" min="0" max="255" step="1" value="128">
+              <input id="headerRed" type="number" min="0" max="255" step="1" value="128">
               Green
-              <input id=headerGreen type="number" min="0" max="255" step="1" value="128">
+              <input id="headerGreen" type="number" min="0" max="255" step="1" value="128">
               Blue
-              <input id=headerBlue type="number" min="0" max="255" step="1" value="128">
+              <input id="headerBlue" type="number" min="0" max="255" step="1" value="128">
             </p>
           </div>
           <div class="col-md-3">
             <h3>Background Colour</h3>
-            <p id=backgroundHex>Hex: #000000</p>
+            <p id="backgroundHex">Hex: #000000</p>
             <p>
               Red
-              <input id=backgroundRed type="number" min="0" max="255" step="1" value="128">
+              <input id="backgroundRed" type="number" min="0" max="255" step="1" value="128">
               Green
-              <input id=backgroundGreen type="number" min="0" max="255" step="1" value="128">
+              <input id="backgroundGreen" type="number" min="0" max="255" step="1" value="128">
               Blue
-              <input id=backgroundBlue type="number" min="0" max="255" step="1" value="128">
+              <input id="backgroundBlue" type="number" min="0" max="255" step="1" value="128">
             </p>
           </div>
           <div class="col-md-3">
             <h3>Font Colour</h3>
-            <p id=fontHex>Hex: #000000</p>
+            <p id="fontHex">Hex: #000000</p>
             <p>
               Red
-              <input id=fontRed type="number" min="0" max="255" step="1" value="128">
+              <input id="fontRed" type="number" min="0" max="255" step="1" value="128">
               Green
-              <input id=fontGreen type="number" min="0" max="255" step="1" value="128">
+              <input id="fontGreen" type="number" min="0" max="255" step="1" value="128">
               Blue
-              <input id=fontBlue type="number" min="0" max="255" step="1" value="128">
+              <input id="fontBlue" type="number" min="0" max="255" step="1" value="128">
             </p>
           </div>
           <div class="col-md-3">
             <h3>Link Colour</h3>
-            <p id=linkHex>Hex: #000000</p>
+            <p id="linkHex">Hex: #000000</p>
             <p>
               Red
-              <input id=linkRed type="number" min="0" max="255" step="1" value="128">
+              <input id="linkRed" type="number" min="0" max="255" step="1" value="128">
               Green
-              <input id=linkGreen type="number" min="0" max="255" step="1" value="128">
+              <input id="linkGreen" type="number" min="0" max="255" step="1" value="128">
               Blue
-              <input id=linkBlue type="number" min="0" max="255" step="1" value="128">
+              <input id="linkBlue" type="number" min="0" max="255" step="1" value="128">
             </p>
           </div>
         </div>
