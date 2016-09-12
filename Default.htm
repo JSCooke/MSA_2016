@@ -74,12 +74,6 @@
             <a class="btn btn-default btn-lg" onclick="setColours([14, 81, 167], [82, 130, 189], [255, 255, 255], [154, 200, 240])" role="button">Monochrome &raquo;</a>
             <a class="btn btn-default btn-lg" onclick="setColours([255, 106, 00], [255, 162, 00], [91, 59, 00], [155, 64, 00])" role="button">Two-tone &raquo;</a>
             <a class="btn btn-default btn-lg" onclick="setColours([129, 46, 175], [216, 84, 161], [111, 17, 22], [157, 0, 92])" role="button">Three-tone &raquo;</a>
-            <div class="input-group" style="width:60%;">
-              <input id="URL" type="text" class="form-control" placeholder="Or, enter a URL, and get a scheme from a website!" style="width:100%;">
-              <span class="input-group-btn">
-                <button class="btn btn-default" type="button">Go!</button>
-              </span>
-          </div>
           </form>
         </p>
       </div>
@@ -152,8 +146,20 @@
         </div>
       </div>
     </nav>
-    <iframe src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Fslidecol.azurewebsites.net%2F&layout=button&mobile_iframe=true&width=59&height=20&appId" width="59" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
-    <a href="https://twitter.com/share" class="twitter-share-button" data-text="I just made a colour scheme with SlideCol! Try it here:" data-url="http://slidecol.azurewebsites.net/#" data-show-count="false">Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2">
+          <iframe src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Fslidecol.azurewebsites.net%2F&layout=button&mobile_iframe=true&width=59&height=20&appId" width="59" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+          <a href="https://twitter.com/share" class="twitter-share-button" data-text="I just made a colour scheme with SlideCol! Try it here:" data-url="http://slidecol.azurewebsites.net/#" data-show-count="false">Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+        <div class="col-md-5">
+          <p id="timeAPI">The current time in Amsterdam is:</p> 
+        </div>
+        <div class="col-md-5">
+          <button class="btn btn-default" type="button" onclick="update()">Update</button>
+        </div>
+      </div>
+    </div>
     </div>
 
 
