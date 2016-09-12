@@ -69,16 +69,15 @@
         <h4>When you're happy with the style, copy these hexcodes and use them on your own site!</h4>
         <div class="row">
           <div class="col-md-3">
-            <!--Adjust p to be lighter-->
             <h3>Header Colour</h3>
             <p id="headerHex">Hex: #C8C8C8</p>
             <p>
               Red
-              <input id="headerRed" type="range" min="0" max="255" step="1" value="200" oninput="updateHeaderHex()">
+              <input id="headerRed" type="range" min="0" max="255" step="1" value="200" oninput="updateHex('header')">
               Green
-              <input id="headerGreen" type="range" min="0" max="255" step="1" value="200" oninput="updateHeaderHex()">
+              <input id="headerGreen" type="range" min="0" max="255" step="1" value="200" oninput="updateHex('header')">
               Blue
-              <input id="headerBlue" type="range" min="0" max="255" step="1" value="200" oninput="updateHeaderHex()">
+              <input id="headerBlue" type="range" min="0" max="255" step="1" value="200" oninput="updateHex('header')">
             </p>
           </div>
           <div class="col-md-3">
@@ -86,11 +85,11 @@
             <p id="backgroundHex">Hex: #FFFFFF</p>
             <p>
               Red
-              <input id="backgroundRed" type="range" min="0" max="255" step="1" value="255">
+              <input id="backgroundRed" type="range" min="0" max="255" step="1" value="255" oninput="updateHex('background')">
               Green
-              <input id="backgroundGreen" type="range" min="0" max="255" step="1" value="255">
+              <input id="backgroundGreen" type="range" min="0" max="255" step="1" value="255" oninput="updateHex('background')">
               Blue
-              <input id="backgroundBlue" type="range" min="0" max="255" step="1" value="255">
+              <input id="backgroundBlue" type="range" min="0" max="255" step="1" value="255" oninput="updateHex('background')">
             </p>
           </div>
           <div class="col-md-3">
@@ -98,11 +97,11 @@
             <p id="fontHex">Hex: #0A0A64</p>
             <p>
               Red
-              <input id="fontRed" type="range" min="0" max="255" step="1" value="10">
+              <input id="fontRed" type="range" min="0" max="255" step="1" value="10" oninput="updateHex('font')">
               Green
-              <input id="fontGreen" type="range" min="0" max="255" step="1" value="10">
+              <input id="fontGreen" type="range" min="0" max="255" step="1" value="10" oninput="updateHex('font')">
               Blue
-              <input id="fontBlue" type="range" min="0" max="255" step="1" value="100">
+              <input id="fontBlue" type="range" min="0" max="255" step="1" value="100" oninput="updateHex('font')">
             </p>
           </div>
           <div class="col-md-3">
@@ -110,11 +109,11 @@
             <p id="linkHex">Hex: #6464C8</p>
             <p>
               Red
-              <input id="linkRed" type="range" min="0" max="255" step="1" value="100">
+              <input id="linkRed" type="range" min="0" max="255" step="1" value="100" oninput="updateHex('link')">
               Green
-              <input id="linkGreen" type="range" min="0" max="255" step="1" value="100">
+              <input id="linkGreen" type="range" min="0" max="255" step="1" value="100" oninput="updateHex('link')">
               Blue
-              <input id="linkBlue" type="range" min="0" max="255" step="1" value="200">
+              <input id="linkBlue" type="range" min="0" max="255" step="1" value="200" oninput="updateHex('link')">
             </p>
           </div>
         </div>

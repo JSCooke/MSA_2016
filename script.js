@@ -15,11 +15,11 @@ function rgbToHex(r, g, b) {
     var hexCode = "#" + rStr + gStr + bStr;
     return hexCode;
 }
-function updateHeaderHex() {
-    var r = parseInt(document.getElementById("headerRed").value);
-    var g = parseInt(document.getElementById("headerGreen").value);
-    var b = parseInt(document.getElementById("headerBlue").value);
-    document.getElementById("headerHex").innerHTML = "Hex: " + rgbToHex(r, g, b);
+function updateHex(type) {
+    var r = parseInt(document.getElementById(type + "Red").value);
+    var g = parseInt(document.getElementById(type + "Green").value);
+    var b = parseInt(document.getElementById(type + "Blue").value);
+    document.getElementById(type + "Hex").innerHTML = "Hex: " + rgbToHex(r, g, b);
     localStorage.setItem("r", r.toString());
     localStorage.setItem("g", g.toString());
     localStorage.setItem("b", b.toString());
