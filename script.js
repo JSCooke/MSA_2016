@@ -21,7 +21,13 @@ function updateHex(type) {
     var b = parseInt(document.getElementById(type + "Blue").value);
     var colour = rgbToHex(r, g, b);
     document.getElementById(type + "Hex").innerHTML = "Hex: " + colour;
-    if (type == "font") {
+    if (type == "header") {
+        document.getElementById("headerBody").style.backgroundColor = colour;
+    }
+    else if (type == "background") {
+        document.body.style.background = colour;
+    }
+    else if (type == "font") {
         var fontElements;
         for (var j = 1; j <= 6; j++) {
             fontElements = document.getElementsByTagName("h" + j.toString());

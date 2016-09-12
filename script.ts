@@ -24,7 +24,11 @@ function updateHex(type:string){
     let colour: string = rgbToHex(r,g,b)
     document.getElementById(type+"Hex").innerHTML = "Hex: "+colour
     
-    if (type == "font"){
+    if (type == "header"){
+        document.getElementById("headerBody").style.backgroundColor = colour
+    } else if (type == "background"){
+        document.body.style.background = colour
+    } else if (type == "font"){
         var fontElements
         for (var j = 1; j<=6; j++){
             fontElements = document.getElementsByTagName("h"+j.toString())
@@ -41,7 +45,7 @@ function updateHex(type:string){
         for(var i = 0; i < linkElements.length; i++) {
             linkElements[i].style.color = colour
         }
-    }
+    } 
 
     localStorage.setItem("r",r.toString())
     localStorage.setItem("g",g.toString())
