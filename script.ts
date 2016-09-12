@@ -36,6 +36,11 @@ function updateHex(type:string){
         for(var i = 0; i < fontElements.length; i++) {
             fontElements[i].style.color = colour
         }
+    } else if (type == "link"){
+        var linkElements = document.getElementsByTagName("a")
+        for(var i = 0; i < linkElements.length; i++) {
+            linkElements[i].style.color = colour
+        }
     }
 
     localStorage.setItem("r",r.toString())
