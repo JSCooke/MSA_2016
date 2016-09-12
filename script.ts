@@ -1,13 +1,14 @@
 function rgbToHex(r:number, g:number, b:number){
-    let rStr: string = r.toString(16)
+    let rStr: string = r.toString(16).toUpperCase()
+    rStr = rStr.toUpperCase()
     if (rStr.length==1){
         rStr = "0"+rStr
     }
-    let gStr: string = g.toString(16)
+    let gStr: string = g.toString(16).toUpperCase()
     if (gStr.length==1){
         gStr = "0"+gStr
     }
-    let bStr: string = b.toString(16)
+    let bStr: string = b.toString(16).toUpperCase()
     if (bStr.length==1){
         bStr = "0"+bStr
     }
