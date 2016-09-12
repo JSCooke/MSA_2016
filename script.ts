@@ -14,3 +14,15 @@ function rgbToHex(r:number, g:number, b:number){
     let hexCode: string = "#"+rStr+gStr+bStr
     return hexCode
 }
+function updateHeaderHex(){
+
+    let r: number = parseInt((<HTMLInputElement>document.getElementById("headerRed")).value)
+    let g: number = parseInt((<HTMLInputElement>document.getElementById("headerGreen")).value)
+    let b: number = parseInt((<HTMLInputElement>document.getElementById("headerBlue")).value)
+
+    document.getElementById("headerHex").innerHTML = "Hex: "+rgbToHex(r,g,b)
+    
+    localStorage.setItem("r",r.toString())
+    localStorage.setItem("g",g.toString())
+    localStorage.setItem("b",b.toString())
+}

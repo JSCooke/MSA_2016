@@ -32,6 +32,7 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <script type="text/javascript" src="script.js"></script>
   </head>
 
   <body>
@@ -73,11 +74,11 @@
             <p id="headerHex">Hex: #000000</p>
             <p>
               Red
-              <input id="headerRed" type="number" min="0" max="255" step="1" value="128">
+              <input id="headerRed" type="number" min="0" max="255" step="1" value="128" oninput="updateHeaderHex()">
               Green
-              <input id="headerGreen" type="number" min="0" max="255" step="1" value="128">
+              <input id="headerGreen" type="number" min="0" max="255" step="1" value="128" oninput="updateHeaderHex()">
               Blue
-              <input id="headerBlue" type="number" min="0" max="255" step="1" value="128">
+              <input id="headerBlue" type="number" min="0" max="255" step="1" value="128" oninput="updateHeaderHex()">
             </p>
           </div>
           <div class="col-md-3">
