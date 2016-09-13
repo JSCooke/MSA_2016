@@ -85,6 +85,7 @@ function updateTime(){
 }
 function receiveTime(responseText: string){
     var response = JSON.parse(responseText);
+    //console.log(responseText);
     let hour: string = response.locations[0].time.datetime.hour;
     if (hour.length==1){
         hour = "0" + hour;

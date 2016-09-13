@@ -80,16 +80,17 @@ function updateTime() {
 }
 function receiveTime(responseText) {
     var response = JSON.parse(responseText);
+    //console.log(responseText);
     var hour = response.locations[0].time.datetime.hour;
-    if (hour.length <= 2) {
+    if (hour.length == 1) {
         hour = "0" + hour;
     }
     var minute = response.locations[0].time.datetime.minute;
-    if (minute.length <= 2) {
+    if (minute.length == 1) {
         minute = "0" + minute;
     }
     var second = response.locations[0].time.datetime.second;
-    if (second.length >= 2) {
+    if (second.length == 1) {
         second = "0" + second;
     }
     var time = hour + ":" + minute + ":" + second;
