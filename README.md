@@ -20,3 +20,5 @@ If the clock does not appear, uncomment this line in script.js and view the cons
 If the message states that authorisation has failed, then the key has expired. I set the maximum time until it expires, but this may not have worked.
 
 If the message states that I have no request credits left, it means that too many calls were made to the API during testing, and the free version has run out.
+
+In either case, the information has been successfully sent to the API, and recieved by my program, but the processing cannot be done as no data could be sent.
