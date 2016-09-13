@@ -87,15 +87,15 @@ function receiveTime(responseText: string){
     var response = JSON.parse(responseText);
     let hour: string = response.locations[0].time.datetime.hour;
     if (hour.length==1){
-        hour = "0"+hour
+        hour = "0" + hour;
     }
     let minute: string = response.locations[0].time.datetime.minute;
     if (minute.length==1){
-        minute = "0"+minute
+        minute = "0" + minute;
     }
     let second: string = response.locations[0].time.datetime.second;
     if (second.length==1){
-        second = "0"+second
+        second = "0" + second;
     }
     let time: string = hour + ":" + minute + ":" + second; 
     (<HTMLInputElement>document.getElementById("timeAPI")).innerHTML = 'The current time in Amsterdam is: ' + time;
