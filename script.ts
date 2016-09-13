@@ -73,3 +73,18 @@ function setColours(header: Array<number>, background: Array<number>, font: Arra
     (<HTMLInputElement>document.getElementById("linkBlue")).value = link[2].toString();
     updateHex('link');
 }
+function updateTime(){
+    // compatible with IE7+, Firefox, Chrome, Opera, Safari
+    let xmlhttp: XMLHttpRequest = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function(){
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
+            receiveTime(xmlhttp.responseText);
+        }
+    }
+    xmlhttp.open("GET", "https://api.xmltime.com/timeservice?accesskey=Nji55keaWx&expires=2016-09-12T23%3A27%3A21%2B00%3A00&signature=sY29oFc4mOjSzWzKXKL%2BUrXpPtE%3D&version=2&varname=output&placeid=16&radius=10", true);
+    xmlhttp.send();
+}
+function receiveTime(responseText: string){
+    var response = JSON.parse(responseText);
+    
+}
