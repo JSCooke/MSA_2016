@@ -69,16 +69,30 @@ function setColours(header, background, font, link) {
     updateHex('link');
 }
 function updateTime() {
-    // compatible with IE7+, Firefox, Chrome, Opera, Safari
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             receiveTime(xmlhttp.responseText);
         }
     };
-    xmlhttp.open("GET", "https://api.xmltime.com/timeservice?accesskey=Nji55keaWx&expires=2016-09-12T23%3A27%3A21%2B00%3A00&signature=sY29oFc4mOjSzWzKXKL%2BUrXpPtE%3D&version=2&varname=output&placeid=16&radius=10", true);
+    xmlhttp.open("GET", "https://api.xmltime.com/timeservice?accesskey=Nji55keaWx&expires=2016-09-13T02%3A26%3A02%2B00%3A00&signature=1A%2FKLppwcLudejRvoguBmI6tQ6c%3D&version=2&placeid=16&radius=10", true);
     xmlhttp.send();
 }
 function receiveTime(responseText) {
     var response = JSON.parse(responseText);
+    var hour = response.locations[0].time.datetime.hour;
+    if (hour.length == 1) {
+        hour = "0" + hour;
+    }
+    var minute = response.locations[0].time.datetime.minute;
+    if (minute.length == 1) {
+        minute = "0" + minute;
+    }
+    var second = response.locations[0].time.datetime.second;
+    if (second.length == 1) {
+        second = "0" + second;
+    }
+    var time = hour + ":" + minute + ":" + second;
+    document.getElementById("timeAPI").innerHTML = 'The current time in Amsterdam is: ' + time;
 }
+setInterval(updateTime, 1000);
