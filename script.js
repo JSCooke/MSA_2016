@@ -71,13 +71,14 @@ function setColours(header, background, font, link) {
 }
 //Code from https://developers.google.com/maps/documentation/javascript/tutorials/adding-a-google-map
 var map;
+var marker;
 function initMap() {
-    var startPoint = { lat: -25.363, lng: 131.044 };
+    var startPoint = { lat: -18, lng: 34 };
     map = new google.maps.Map(document.getElementById('map'), {
         zoom: 4,
         center: startPoint
     });
-    var marker = new google.maps.Marker({
+    marker = new google.maps.Marker({
         position: startPoint,
         map: map
     });
@@ -87,5 +88,10 @@ function updateMap() {
     var lat = Number(document.getElementById("lat").value);
     var lon = Number(document.getElementById("lon").value);
     var point = { lat: lat, lng: lon };
+    marker.setMap(null);
+    marker = new google.maps.Marker({
+        position: point,
+        map: map
+    });
     map.panTo(point);
 }
