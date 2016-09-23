@@ -1,3 +1,4 @@
+/// <reference path="./google.maps.d.ts" />
 function rgbToHex(r, g, b) {
     var rStr = r.toString(16).toUpperCase();
     rStr = rStr.toUpperCase();
@@ -68,32 +69,23 @@ function setColours(header, background, font, link) {
     document.getElementById("linkBlue").value = link[2].toString();
     updateHex('link');
 }
-function updateTime() {
-    var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function () {
-        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-            receiveTime(xmlhttp.responseText);
-        }
-    };
-    xmlhttp.open("GET", "https://api.xmltime.com/timeservice?accesskey=Nji55keaWx&expires=2016-09-13T02%3A26%3A02%2B00%3A00&signature=1A%2FKLppwcLudejRvoguBmI6tQ6c%3D&version=2&placeid=16&radius=10", true);
-    xmlhttp.send();
+//Code from https://developers.google.com/maps/documentation/javascript/tutorials/adding-a-google-map
+var map;
+function initMap() {
+    var startPoint = { lat: -25.363, lng: 131.044 };
+    map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 4,
+        center: startPoint
+    });
+    var marker = new google.maps.Marker({
+        position: startPoint,
+        map: map
+    });
 }
-function receiveTime(responseText) {
-    var response = JSON.parse(responseText);
-    //console.log(responseText);
-    var hour = response.locations[0].time.datetime.hour;
-    if (hour.length == 1) {
-        hour = "0" + hour;
-    }
-    var minute = response.locations[0].time.datetime.minute;
-    if (minute.length == 1) {
-        minute = "0" + minute;
-    }
-    var second = response.locations[0].time.datetime.second;
-    if (second.length == 1) {
-        second = "0" + second;
-    }
-    var time = hour + ":" + minute + ":" + second;
-    document.getElementById("timeAPI").innerHTML = 'The current time in Amsterdam is: ' + time;
+google.maps.event.addDomListener(window, "load", initMap);
+function updateMap() {
+    var lat = Number(document.getElementById("lat").value);
+    var lon = Number(document.getElementById("lon").value);
+    var point = { lat: lat, lng: lon };
+    map.panTo(point);
 }
-setInterval(updateTime, 1000);

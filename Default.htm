@@ -151,15 +151,35 @@
           <iframe src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Fslidecol.azurewebsites.net%2F&layout=button&mobile_iframe=true&width=59&height=20&appId" width="59" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
           <a href="https://twitter.com/share" class="twitter-share-button" data-text="I just made a colour scheme with SlideCol! Try it here:" data-url="http://slidecol.azurewebsites.net/#" data-show-count="false">Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
         </div>
-        <div class="col-md-5">
-          <p id="timeAPI">The current time in Amsterdam is:</p> 
+      </div>
+        <div class="row">
+          <div style="display:flex;justify-content:center;align-items:center;">
+            <div class = "col-md-4">
+              <p id="API">Google Maps API (MSA specific requirement)</p> 
+            </div>
+          </div>
         </div>
-        <div class="col-md-5">
-          <button class="btn btn-default" type="button" onclick="updateTime()">Update</button>
+        <div class="row">
+          <div style="display:flex;justify-content:center;align-items:center;">
+            <div class = "col-md-4">
+              <label for="lat">Latitude:</label>
+              <input type="number" class="form-control" min="-90" max ="90" id="lat" onchange="updateMap()">
+            </div>
+            <div class = "col-md-4">
+              <label for="lon">Longitude:</label>
+              <input type="number" class="form-control" min="-180" max ="180" id="lon" onchange="updateMap()">
+            </div>
+          </div>
+        </div>
+        <div class="row" style="margin-top:20px;">
+          <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIdN4qb1HLtEAuGY1eu_2xlWaPKg8UMS8&sensor=false"></script>
+          <div style="display:flex;justify-content:center;align-items:center;">
+            <div id="map" style="height: 300px; width: 600px;"></div>
+          </div>
         </div>
       </div>
     </div>
-    </div>
+  </div>
 
 
     <!-- Bootstrap core JavaScript

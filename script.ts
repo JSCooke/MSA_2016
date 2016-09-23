@@ -1,3 +1,5 @@
+/// <reference path="./google.maps.d.ts" />
+
 function rgbToHex(r:number, g:number, b:number){
     let rStr: string = r.toString(16).toUpperCase()
     rStr = rStr.toUpperCase()
@@ -73,33 +75,24 @@ function setColours(header: Array<number>, background: Array<number>, font: Arra
     (<HTMLInputElement>document.getElementById("linkBlue")).value = link[2].toString();
     updateHex('link');
 }
-function updateTime(){
-    let xmlhttp: XMLHttpRequest = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function(){
-        if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
-            receiveTime(xmlhttp.responseText);
-        }
-    }
-    xmlhttp.open("GET", "https://api.xmltime.com/timeservice?accesskey=Nji55keaWx&expires=2016-09-13T02%3A26%3A02%2B00%3A00&signature=1A%2FKLppwcLudejRvoguBmI6tQ6c%3D&version=2&placeid=16&radius=10", true);
-    xmlhttp.send();
+//Code from https://developers.google.com/maps/documentation/javascript/tutorials/adding-a-google-map
+let map: google.maps.Map
+function initMap() {
+    var startPoint = {lat: -25.363, lng: 131.044};
+    map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 4,
+      center: startPoint
+    });
+    var marker = new google.maps.Marker({
+        position: startPoint,
+        map: map
+    });
 }
-function receiveTime(responseText: string){
-    var response = JSON.parse(responseText);
-    //console.log(responseText);
-    let hour: string = response.locations[0].time.datetime.hour;
-    if (hour.length==1){
-        hour = "0" + hour;
-    }
-    let minute: string = response.locations[0].time.datetime.minute;
-    if (minute.length==1){
-        minute = "0" + minute;
-    }
-    let second: string = response.locations[0].time.datetime.second;
-    if (second.length==1){
-        second = "0" + second;
-    }
-    let time: string = hour + ":" + minute + ":" + second; 
-    (<HTMLInputElement>document.getElementById("timeAPI")).innerHTML = 'The current time in Amsterdam is: ' + time;
-}
+google.maps.event.addDomListener(window, "load", initMap);
 
-setInterval(updateTime, 1000);
+function updateMap(){
+    let lat:number = Number((<HTMLInputElement>document.getElementById("lat")).value)
+    let lon:number = Number((<HTMLInputElement>document.getElementById("lon")).value)
+    let point = {lat: lat, lng: lon};
+    map.panTo(point)
+}
